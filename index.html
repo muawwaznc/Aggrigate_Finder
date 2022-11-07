@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./Resources/IJT_Logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PU Jamiat | Aggrigate Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="social-media">
+        <a href="https://www.facebook.com/PUNewsAlert/" target="_blank">
+            <img src="./Resources/facebook.png" alt="Facebook">
+        </a>
+        <div>Like, Follow and Share</div>
+    </div>
+    <div class="center">
+        <h1>
+            <div class="logo-header">
+                <img src="./Resources/IJT_Logo.png" id="IJTLogo" alt="">
+                <img src="./Resources/PU_Logo.png" id="PULogo" alt="">
+            </div>
+            Islami Jamiat Talibat Pakistan PU
+        </h1>
+        <form>
+            <!-- <center><h2>Aggrigate Calculator</h2></center> -->
+            <div class="txt_field">
+                <input id="matric" type="number" required>
+                <span></span>
+                <label>Matric Marks</label>
+            </div>
+            <div class="txt_field">
+                <input id="inter" type="number" required>
+                <span></span>
+                <label>Intermediate Marks</label>
+            </div>
+            <div class="txt_field">
+                <input id="usat" type="number" required>
+                <span></span>
+                <label>USAT Marks</label>
+            </div>
+            <label id="label"></label>
+            <div class="buttons">
+                <input type="reset" class="resetBtn" value="Reset" onclick="ResetForm()">
+                <input type="button" class="submitBtn" value="Calculate" onclick="FindAggrigate()">
+            </div>            
+        </form>
+    </div>
+</body>
+<script>
+    function ResetForm(){
+        var allInputs = document.querySelectorAll('input');
+        allInputs.forEach((allInput) => {
+            if(allInput.id === 'matric' || allInput.id === 'inter' || allInput.id === 'usat'){
+                allInput.value = "";
+            }
+        })
+
+        var label = document.getElementById('label');
+        label.innerText = '';
+    }
+    function FindAggrigate(){
+        var matric = parseInt(document.getElementById('matric').value);
+        var inter = parseInt(document.getElementById('inter').value);
+        var usat = parseInt(document.getElementById('usat').value);
+        if(matric >= 0 && matric <= 1100 && inter >= 0 && inter <= 1100 && usat >= 0 && usat <= 400){
+            var academic = (( matric / 4 ) + inter ) * ( 100 / 1375 );            
+            usat = (usat / 100) * 15;
+            
+            var aggrigate = (academic * (85/100)) + usat;
+            aggrigate = aggrigate.toFixed(3);
+            var text = "Your Aggrigate is: " + aggrigate + "%";
+
+            var label = document.getElementById('label');
+            label.innerText = text;
+            label.style.color = 'red';
+            label.style.fontSize = '20px'
+
+            var allInputs = document.querySelectorAll('input');
+            allInputs.forEach((allInput) => {
+                if(allInput.id === 'matric' || allInput.id === 'inter' || allInput.id === 'usat'){
+                    allInput.value = "";
+                }
+            })
+        }
+        else{
+            var text = "Please Enter the valid value";
+            var label = document.getElementById('label');
+            label.innerText = text
+            label.style.color = 'red';
+            label.style.fontSize = '20px'
+        }
+    }
+    
+</script>
+</html>
