@@ -68,7 +68,7 @@
         var matric = parseInt(document.getElementById('matric').value);
         var inter = parseInt(document.getElementById('inter').value);
         var usat = parseInt(document.getElementById('usat').value);
-        if(matric >= 0 && matric <= 1100 && inter >= 0 && inter <= 1100 && usat >= 0 && usat <= 400){
+        if(matric >= 0 && matric <= 1100 && inter >= 0 && inter <= 1100 && usat >= 0 && usat <= 100){
             var academic = (( matric / 4 ) + inter ) * ( 100 / 1375 );            
             usat = (usat / 100) * 15;
             
