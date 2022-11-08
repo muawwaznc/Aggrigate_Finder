@@ -5,12 +5,10 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
 body{
   margin-top: 20px;
   padding: 0;
   background-color: pink;
-  /* background: url('./Resources/background.jpg'); */
   background-size: cover;
 }
 .center{
@@ -31,11 +29,19 @@ body{
   align-items: center;
   justify-content: center;
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 #PULogo{
-    height: 150px;
+  height: 150px;
+  animation: fadeIn 5s; 
 }
 #IJTLogo{
-    width: 80px;
+  width: 80px;
+  animation: fadeIn 5s; 
 }
 .center img{
   padding: 20px 0;
@@ -142,55 +148,55 @@ form .txt_field{
 }
 
 @media screen and (max-width: 425px) {
-    body{
-      margin: 0px;
-      background: none;
-      background-color: white;
-    }
-    .center{
-        width: 100%;
-    }
-    .center h1{
-        font-size: 18px;
-    }
-    .center form{
-        padding: 15px 10px;
-    }
-    .submitBtn,
-    .resetBtn{
+  body{
+    margin: 0px;
+    background: none;
+    background-color: white;
+  }
+  .center{
       width: 100%;
-      font-weight: 500;
-      margin: 0;
-    }
-    .social-media{
-      font-size: 20px;
-      color: black;
-      font-weight: 500;
-      border-bottom: #353535 ridge 1px;
-    }
+  }
+  .center h1{
+      font-size: 18px;
+  }
+  .center form{
+      padding: 15px 10px;
+  }
+  .submitBtn,
+  .resetBtn{
+    width: 100%;
+    font-weight: 500;
+    margin: 0;
+  }
+  .social-media{
+    font-size: 20px;
+    color: black;
+    font-weight: 500;
+    border-bottom: #353535 ridge 1px;
+  }
 }
 @media screen and (max-width: 375px) {
-    .center h1{
-        font-size: 15px;
-    }
+  .center h1{
+      font-size: 15px;
+  }
 }
 @media screen and (max-width: 320px) {
-    .center h1{
-        font-size: 13px;
-    }
-    .center img{
-        padding: 30px 0;
-    }
-    .submitBtn,
-    .resetBtn{
-      font-weight: 400;
-    }
-    .social-media{
-      font-size: 18px;
-      color: black;
-      font-weight: 500;
-    }
-    .social-media img{
-      width: 30px;
-    }
+  .center h1{
+    font-size: 13px;
+  }
+  .center img{
+      padding: 30px 0;
+  }
+  .submitBtn,
+  .resetBtn{
+    font-weight: 400;
+  }
+  .social-media{
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+  }
+  .social-media img{
+    width: 30px;
+  }
 }
